@@ -1,17 +1,20 @@
 src/
 ├── components/
-│   ├── MealCard.jsx        # Tarjeta individual de receta
-│   └── SearchBar.jsx       # Barra de búsqueda
-│
+│     ├── Footer.jsx
+├── header/
+├     ├── NavBar.jsx
+│     ├── Header.jsx
+│     ├── SearchBar.jsx
+│     └── Hero.jsx
+├── cards/
+│     ├── RecipeCard.jsx
+│     ├── RandomRecipes.jsx
+│     └── CategoryCard.jsx
 ├── pages/
-│   ├── Home.jsx            # Página principal con listado de recetas
-│   └── MealDetail.jsx      # Página de detalle al hacer clic en receta
-│
+│     ├── Home.jsx
+│     ├── CategoriesPage.jsx
+│     └── Locacion.jsx
+
 ├── routes/
-│   └── AppRouter.jsx       # Configuración de rutas (React Router)
-│
-├── services/
-│   └── api.js              # Funciones para consumir la API
-│
-├── App.jsx                 # Componente principal
-└── main.jsx                # Punto de entrada
+│     └── AppRouter.jsx
+├── main  
