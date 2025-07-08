@@ -1,3 +1,19 @@
+# Meal App – Proyecto en React + Vite
+
+Aplicación web de recetas desarrollada en equipo utilizando **React**, **Vite** y **React Router**. 
+Diseñada con enfoque modular, responsive y escalable.
+
+## 🚀 Tecnologías utilizadas
+
+- ⚛️ React
+- ⚡ Vite
+- 🌐 React Router DOM
+- 💨 Tailwind CSS (o CSS propio)
+- 🧪 ESLint (configuración base)
+
+
+## 🗂 Estructura del proyecto
+
 src/
 ├── components/
 │     ├── Footer.jsx
