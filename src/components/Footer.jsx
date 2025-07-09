@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-[#5A3E36] text-white py-8">
       <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-4 md:mb-0">
-          <img src="public/assets/logo.svg" alt="Logo" className="h-10 mx-auto md:mx-0 mb-2" />
+          <img src="/assets/logo.svg" alt="Logo" className="h-10 mx-auto md:mx-0 mb-2" />
 
           <p className="text-sm">Tu proyecto de recetas.</p>
         </div>

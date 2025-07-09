@@ -1,15 +1,19 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "../components/Layout";
 import Home from "../pages/Home";
-import Header from "../header/Header";
+import CategoriesPage from "../pages/CategoriesPage";
+import Location from "../pages/Location";
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-       
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="categoria/:nombre" element={<CategoriesPage />} />
+          <Route path="localidad/:pais" element={<Location />} />
+          
+        </Route>
       </Routes>
     </BrowserRouter>
   );

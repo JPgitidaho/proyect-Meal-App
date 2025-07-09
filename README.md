@@ -34,14 +34,80 @@ src/
 │     └── AppRouter.jsx
 ├── main  
 └── index.css
+# 📋 Tareas del equipo - Proyecto MEAL-APP
 
-Equipo de desarrollo
-👩‍💼 Juanita (Líder de proyecto): rutas, integración general, AppRouter
+## 🎯 Objetivo
+Organizar claramente las responsabilidades de cada integrante y definir qué componente o página debe entregar. También se indican las dependencias entre miembros para una correcta integración.
 
-👨‍💻 Luis Daniel: Header completo (NavBar, SearchBar, Hero)
+---
 
-👩‍💻 Carlo: Cards (RecipeCard, RandomRecipes, CategoryCard)
+## 👩‍💼 Juanita – Líder del proyecto
 
-👨‍💻 Bastian: Footer y páginas (Home, CategoriesPage, location)
+**Responsabilidades:**
+- Configuración de rutas (`AppRouter.jsx`)
+- Layout principal con `Outlet`, `Hero`, `Header`, `Footer` (`Layout.jsx`)
+- Integración general y pruebas finales
+- Coordinación del equipo y revisión de avances
+- Verificación de diseño responsive y funcionamiento
 
-Puedes editar estos nombres con los reales de tu equipo.
+---
+
+## 👨‍💻 Luis Daniel – Header y búsqueda
+
+**Componentes:**
+- `NavBar.jsx`: navegación con `<Link>` a las rutas principales
+- `SearchBar.jsx`: barra de búsqueda (a conectar con API)
+- `Hero.jsx`: visual superior, con buscador solo en `/`
+
+---
+
+## 👩‍💻 Carlo – Componentes visuales y página por categoría
+
+**Componentes:**
+- `RecipeCard.jsx`: tarjeta individual de receta
+- `CategoryCard.jsx`: tarjeta de categoría
+- `RecipeGrid.jsx`: grilla de recetas usando `RecipeCard`
+- `RandomRecipes.jsx`: recetas aleatorias en el home
+
+**Página:**
+- `CategoriesPage.jsx`: recetas por categoría (`/categoria/:nombre`), con `fetch`
+
+**Notas:**
+- Los componentes deben ser reutilizables mediante props (`receta`, `recetas`, etc.).
+- `RecipeGrid` será usado por otras páginas también.
+
+---
+
+## 👨‍💻 Bastián – Página Home, Location y Footer
+
+**Páginas/Componentes:**
+- `Home.jsx`: muestra `RandomRecipes` (de Carlo)
+- `Location.jsx`: recetas por país (`/localidad/:pais`), usando `RecipeGrid`
+- `Footer.jsx`: componente visual inferior
+- Apoyo en testeo, responsive, ajustes visuales
+
+**Notas:**
+- Bastián debe hacer `fetch` en `Location.jsx` y pasar los datos al grid.
+- No debe incluir `Hero` ni `Footer` directamente (ya están en el layout).
+
+---
+
+## 🧪 Coordinación y dependencias
+
+| Tarea                        | Responsable | Depende de          |
+|-----------------------------|-------------|----------------------|
+| Mostrar recetas aleatorias  | Bastián     | `RandomRecipes` de Carlo |
+| Mostrar recetas por categoría | Carlos    | -                    |
+| Mostrar recetas por país    | Bastián     | `RecipeGrid` de Carlo     |
+| Buscar receta               | Luis Daniel | Conexión con API     |
+| Navegación completa         | Juanita     | NavBar de Luis       |
+
+---
+
+## 🗓️ Fechas clave
+
+- 🔄 Revisión funcional: **Miércoles**
+- ✅ Integración general: **Jueves**
+- 📦 Entrega final: **Viernes**
+
+---
