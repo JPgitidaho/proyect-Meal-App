@@ -12,7 +12,6 @@ export default function AppRouter() {
           <Route index element={<Home />} />
           <Route path="categoria/:nombre" element={<CategoriesPage />} />
           <Route path="localidad/:pais" element={<Location />} />
-          
         </Route>
       </Routes>
     </BrowserRouter>

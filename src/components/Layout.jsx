@@ -14,13 +14,13 @@ export default function Layout() {
   if (location.pathname === "/") {
     mostrarBuscador = true;
   } else if (pathParts[1] === "categoria") {
-    heroImg = `/assets/${pathParts[2].toLowerCase()}.jpg`;
+    heroImg = `/assets/${pathParts[2]?.toLowerCase()}.jpg`;
   } else if (pathParts[1] === "localidad") {
-    heroImg = `/assets/${pathParts[2].toLowerCase()}.jpg`;
+    heroImg = `/assets/${pathParts[2]?.toLowerCase()}.jpg`;
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-fondo text-texto">
       <Header />
       <Hero imagen={heroImg} mostrarBuscador={mostrarBuscador} />
       <main className="flex-grow px-4 py-8">

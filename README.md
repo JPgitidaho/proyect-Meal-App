@@ -23,9 +23,11 @@ src/
 │     ├── SearchBar.jsx
 │     └── Hero.jsx
 ├── cards/
-│     ├── RecipeCard.jsx
-│     ├── RandomRecipes.jsx
-│     └── CategoryCard.jsx
+│   ├── RecipeCard.jsx
+│   ├── RecipeGrid.jsx
+│   ├── CategoryCard.jsx
+│   ├── CategoryList.jsx
+│   └── RandomRecipes.jsx
 ├── pages/
 │     ├── Home.jsx
 │     ├── CategoriesPage.jsx
