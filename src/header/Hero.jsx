@@ -1,27 +1,21 @@
 import React from "react";
 
-export default function Hero({ imagen, mostrarBuscador }) {
-  const heroImg = imagen || "/assets/hero.jpg";
+import SearchBar from "../header/SearchBar";
 
+export default function Hero() {
   return (
     <div className="heroContainer w-full pt-[7vh]">
       <div
-        className="relative w-full justify-center h-[500px] bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroImg})` }}
+        className="relative w-full justify-center h-[500px] bg-cover bg-[80%_center] md:bg-center"
+        style={{ backgroundImage: `url(/hero.jpg)` }}
       >
         <div className="relative z-10 flex flex-col justify-center items-center h-full w-full text-[#586833]">
-          {mostrarBuscador && (
-            <div className="heroSearch flex flex-col bg-white/70 w-[65%] h-[30%] items-center justify-center">
-              <h1 className="text-4xl font-bold mb-4">
-                ¿Qué te gustaría cocinar hoy?
-              </h1>
-              <input
-                type="text"
-                placeholder="Buscar..."
-                className="border border-[#51612a] p-3 rounded w-3/4 max-w-md text-[#586833]"
-              />
-            </div>
-          )}
+          <div className="heroSearch relative flex flex-col bg-white/70 w-[85%] md:w-[65%] lg:w-[40%] h-[35%] md:h-[35%] items-center justify-center px-4 py-2">
+            <h1 className="text-md md:text-3xl font-bold mb-4 text-center">
+              ¿Qué te gustaría cocinar hoy?
+            </h1>
+            <SearchBar />
+          </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
       </div>

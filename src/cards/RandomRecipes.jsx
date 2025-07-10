@@ -6,14 +6,16 @@ const RandomRecipes = () => {
   const [recetas, setRecetas] = useState([]);
 
   useEffect(() => {
-    Promise.all([
-      axios.get("https://www.themealdb.com/api/json/v1/1/random.php"),
-      axios.get("https://www.themealdb.com/api/json/v1/1/random.php"),
-      axios.get("https://www.themealdb.com/api/json/v1/1/random.php"),
-      axios.get("https://www.themealdb.com/api/json/v1/1/random.php"),
-    ]).then((results) => {
-      setRecetas(results.map((res) => res.data.meals[0]));
-    });
+    const fetchUniqueRecipes = async () => {
+      const recetasUnicas = new Map();
+      while (recetasUnicas.size < 4) {
+        const res = await axios.get("https://www.themealdb.com/api/json/v1/1/random.php");
+        const receta = res.data.meals[0];
+        recetasUnicas.set(receta.idMeal, receta);
+      }
+      setRecetas(Array.from(recetasUnicas.values()));
+    };
+    fetchUniqueRecipes();
   }, []);
 
   return (
