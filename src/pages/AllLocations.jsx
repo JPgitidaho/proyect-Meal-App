@@ -15,12 +15,12 @@ export default function AllLocations() {
   }, []);
 
   if (cargando) {
-    return <div className="p-8 text-center">Cargando regiones...</div>;
+    return <div className="p-8 text-center">Loading regions....</div>;
   }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 text-[#586833]">
-      <h1 className="text-3xl font-bold mb-6 text-center">Explora por Región</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Explore by Country</h1>
       <GridLayout>
         {locaciones.map((item, i) => (
           <Link

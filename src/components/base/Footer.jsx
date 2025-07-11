@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="text-center md:text-left mb-4 md:mb-0">
           <img src="/assets/logo.svg" alt="Logo" className="h-10 mx-auto md:mx-0 mb-2" />
 
-          <p className="text-sm flex justify-center">Tu proyecto de recetas.</p>
+          <p className="text-sm flex justify-center">Your Personal Cookbook</p>
         </div>
         <div className="flex space-x-6 mb-4 md:mb-0">
           <a

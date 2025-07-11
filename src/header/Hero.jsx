@@ -10,7 +10,7 @@ export default function Hero({ mostrarBuscador = false, imagen }) {
         <div className="relative z-10 flex flex-col justify-center items-center h-full w-full text-[#586833]">
           <div className="heroSearch relative flex flex-col bg-white/70 w-[85%] md:w-[65%] lg:w-[40%] h-[35%] md:h-[35%] items-center justify-center px-4 py-2">
             <h1 className="text-md md:text-3xl font-bold mb-4 text-center">
-              ¿Qué te gustaría cocinar hoy?
+             What would you like to cook today?
             </h1>
             {mostrarBuscador && <SearchBar />}
           </div>

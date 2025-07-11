@@ -18,7 +18,7 @@ export default function RecipePage() {
 
       <div className="py-6 flex flex-col lg:flex-row gap-8 text-[#586833]">
         <aside className="w-full lg:w-80 border border-[#d2e3c8] rounded shadow p-4 bg-white mb-6 lg:mb-0">
-          <h2 className="text-xl font-bold mb-4">Ingredientes</h2>
+          <h2 className="text-xl font-bold mb-4">Ingredients</h2>
           <ul className="space-y-2">
             {ingredientes.map((item, i) => (
               <li key={i} className="flex justify-between border-b pb-1 text-sm">

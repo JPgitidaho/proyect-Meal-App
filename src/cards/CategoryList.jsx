@@ -29,12 +29,12 @@ export default function CategoryList() {
   return (
     <div className="w-full bg-white py-4">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="ml-10 text-2xl font-bold mb-6 text-[#586833]">Categorías</h2>
+        <h2 className="ml-10 text-2xl font-bold mb-6 text-[#586833]">Categories</h2>
 
-        {loading && <p className="text-gray-600">Cargando categorías...</p>}
+        {loading && <p className="text-gray-600">Loading categories...</p>}
         {error && (
           <p className="text-red-500">
-            Error al cargar categorías: {error.message}
+           Error loading categories:{error.message}
           </p>
         )}
 
@@ -57,7 +57,7 @@ export default function CategoryList() {
                 to="/todas-categorias"
                 className="text-xl font-semibold text-[#586833] hover:text-[#3f4f28] transition"
               >
-                Ver todas las categorías →
+                See All Categories →
               </Link>
             </div>
             </GridLayout>

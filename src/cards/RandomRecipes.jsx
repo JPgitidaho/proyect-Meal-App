@@ -41,9 +41,9 @@ const RandomRecipes = () => {
   return (
         <div className="w-full bg-white py-4">
       <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-2xl ml-10 font-bold mb-6 text-[#586833] ">Recetas Aleatorias</h2>
+      <h2 className="text-2xl ml-10 font-bold mb-6 text-[#586833] ">Random Recipes</h2>
 
-      {loading && <p className="text-gray-600 px-4">Cargando recetas...</p>}
+      {loading && <p className="text-gray-600 px-4">Loading recipes...</p>}
       {error && (
         <p className="text-red-500 px-4">
           Error al cargar recetas: {error.message}

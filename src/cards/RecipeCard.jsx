@@ -46,7 +46,7 @@ const RecipeCard = ({
             onClick={() => navegar(receta || { strCategory: title })}
             variant="olive-outline"
           >
-            Ver más
+            See more
           </Button>
         </div>
       </div>

@@ -23,12 +23,9 @@ export default function Layout() {
 {mostrarHero && (
   <Hero imagen="/assets/hero.jpg" mostrarBuscador={mostrarBuscador} />
 )}
-
-
       <main className="flex-grow ">
         <Outlet />
       </main>
-
       <Footer />
     </div>
   );

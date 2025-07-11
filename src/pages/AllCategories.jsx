@@ -18,11 +18,11 @@ export default function AllCategories() {
     <div className="w-full bg-white py-4">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold mb-6 text-[#586833] text-center">
-          Todas las Categorías
+          All Categories
         </h1>
 
         {cargando ? (
-          <p className="text-gray-600 text-center">Cargando categorías...</p>
+          <p className="text-gray-600 text-center">Loading recipes...</p>
         ) : (
           <GridLayout>
             {categorias.map((categoria) => (

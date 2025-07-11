@@ -12,11 +12,11 @@ export default function Location() {
     <div className="w-full bg-white py-4">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-2xl font-bold mb-6 text-[#586833] capitalize">
-          Recetas de {pais}
+          Recipes from{pais}
         </h1>
 
         {cargando ? (
-          <p className="text-gray-600 text-center">Cargando recetas...</p>
+          <p className="text-gray-600 text-center">Loading recipes...</p>
         ) : (
           <GridLayout>
             {recetas?.map((receta) => (
