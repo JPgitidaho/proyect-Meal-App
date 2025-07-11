@@ -1,42 +1,70 @@
 import React, { useState, useEffect } from "react";
-import search from "/public/search.svg";
+import { useNavigate } from "react-router-dom";
+import search from "/search.svg";
 import { useDebounce } from "../hooks/UseDebounce";
 
 export default function SearchBar({ placeholder = "Buscar..." }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [selectedMealId, setSelectedMealId] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
   const debouncedQuery = useDebounce(query, 400);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (debouncedQuery.trim().length < 2) {
       setResults([]);
+      setSelectedMealId(null);
       return;
     }
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${debouncedQuery}`)
       .then((res) => res.json())
       .then((data) => {
-        setResults(data.meals || []);
+        const meals = data.meals || [];
+        setResults(meals);
+
+        // Si lo que el usuario escribió coincide con una receta, seleccionarla automáticamente
+        const match = meals.find((meal) => meal.strMeal.toLowerCase() === debouncedQuery.toLowerCase());
+        setSelectedMealId(match?.idMeal || null);
       })
       .catch(() => {
         setResults([]);
+        setSelectedMealId(null);
       });
   }, [debouncedQuery]);
 
+  function handleSearchRedirect() {
+    if (selectedMealId) {
+      setErrorMsg("");
+      navigate(`/receta/${selectedMealId}`);
+    } else {
+      setErrorMsg("Por favor selecciona una receta válida de la lista.");
+    }
+  }
+
   return (
-    <div className="busqueda flex relative w-full justify-center">
+    <div className="busqueda flex flex-col items-center w-full relative">
       <div className="searchBar flex flex-row border pr-6 border-[#51612a] w-[75%] justify-between">
         <input
           type="text"
           placeholder={placeholder}
           className="p-3 rounded w-[93%] text-[#586833]"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setErrorMsg("");
+            setSelectedMealId(null); // reiniciamos cuando cambia texto
+          }}
         />
-        <button className="flex hover:scale-105 transition duration-300 cursor-pointer w-[7%] justify-center items-center">
+        <button
+          className="flex hover:scale-105 transition duration-300 cursor-pointer w-[7%] justify-center items-center"
+          onClick={handleSearchRedirect}
+        >
           <img className="size-12" src={search} alt="Buscar" />
         </button>
       </div>
+
       {results.length > 0 && (
         <ul className="absolute top-full max-h-48 w-[75%] overflow-y-auto bg-white border border-[#51612a] shadow-lg z-20 text-[#586833]">
           {results.map((meal) => (
@@ -45,13 +73,19 @@ export default function SearchBar({ placeholder = "Buscar..." }) {
               className="px-4 py-2 hover:bg-[#c9e4ca] cursor-pointer"
               onClick={() => {
                 setQuery(meal.strMeal);
+                setSelectedMealId(meal.idMeal);
                 setResults([]);
+                setErrorMsg("");
               }}
             >
               {meal.strMeal}
             </li>
           ))}
         </ul>
+      )}
+
+      {errorMsg && (
+        <p className="text-red-600 text-sm mt-2">{errorMsg}</p>
       )}
     </div>
   );
