@@ -10,9 +10,9 @@ export default function Header() {
         </Link>
 
         <div className="hidden md:flex gap-6 md:mx-14 text-[#586833] font-medium">
-          <Link to="/">Inicio</Link>
+          <Link to="/">Home</Link>
           <Link to="/todas-categorias">Categories</Link>
-          <Link to="/todas-localizaciones">Countrys</Link>
+          <Link to="/todas-localizaciones">Countries</Link>
         </div>
 
         <div className="md:hidden">

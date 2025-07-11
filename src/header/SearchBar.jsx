@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import search from "/search.svg";
 import { useDebounce } from "../hooks/UseDebounce";
 
-export default function SearchBar({ placeholder = "Buscar..." }) {
+export default function SearchBar({ placeholder = "Search..." }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [selectedMealId, setSelectedMealId] = useState(null);
@@ -37,7 +37,7 @@ export default function SearchBar({ placeholder = "Buscar..." }) {
       setErrorMsg("");
       navigate(`/receta/${selectedMealId}`);
     } else {
-      setErrorMsg("Por favor selecciona una receta válida de la lista.");
+      setErrorMsg("Please select a valid recipe from the list");
     }
   }
 
