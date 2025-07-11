@@ -1,8 +1,8 @@
-import SearchBar from "./SearchBar"; 
+import SearchBar from "./SearchBar";
 
 export default function Hero({ mostrarBuscador = false, imagen }) {
   return (
-    <div className="heroContainer w-full pt-[7vh]">
+    <div className="heroContainer w-full pt-[0]">
       <div
         className="relative w-full justify-center h-[500px] bg-cover bg-[80%_center] md:bg-center"
         style={{ backgroundImage: `url(${imagen})` }}
