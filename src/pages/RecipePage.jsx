@@ -12,7 +12,7 @@ export default function RecipePage() {
     <div className="max-w-4xl mx-auto px-4">
       <HeroReceta
         titulo={receta.strMeal}
-        descripcion={`Aprende a preparar esta receta de ${receta.strMeal} paso a paso.`}
+        descripcion={`Learn how to make this ${receta.strMeal} recipe step by step.`}
         imagen={receta.strMealThumb}
       />
 

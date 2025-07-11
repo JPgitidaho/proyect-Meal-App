@@ -23,8 +23,6 @@ export default function SearchBar({ placeholder = "Buscar..." }) {
       .then((data) => {
         const meals = data.meals || [];
         setResults(meals);
-
-        // Si lo que el usuario escribió coincide con una receta, seleccionarla automáticamente
         const match = meals.find((meal) => meal.strMeal.toLowerCase() === debouncedQuery.toLowerCase());
         setSelectedMealId(match?.idMeal || null);
       })
