@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import GridLayout from "../components/GridLayout";
 import RecipeCard from "./RecipeCard";
@@ -38,19 +39,31 @@ export default function CategoryList() {
         )}
 
         {!loading && !error && (
-          <GridLayout>
-            {categories.map((categoria) => (
-              <RecipeCard
-                key={categoria.idCategory}
-                title={categoria.strCategory}
-                image={categoria.strCategoryThumb}
-                link={`/categoria/${categoria.strCategory}`}
-                subtitle={
-                  categoria.strCategoryDescription?.slice(0, 50) + "..."
-                }
-              />
-            ))}
-          </GridLayout>
+          <>
+            <GridLayout>
+              {categories.map((categoria) => (
+                <RecipeCard
+                  key={categoria.idCategory}
+                  title={categoria.strCategory}
+                  image={categoria.strCategoryThumb}
+                  link={`/categoria/${categoria.strCategory}`}
+                  subtitle={
+                    categoria.strCategoryDescription?.slice(0, 50) + "..."
+                  }
+                />
+              ))}
+                          <div className="mt-6 text-center">
+              <Link
+                to="/todas-categorias"
+                className="text-xl font-semibold text-[#586833] hover:text-[#3f4f28] transition"
+              >
+                Ver todas las categorías →
+              </Link>
+            </div>
+            </GridLayout>
+
+
+          </>
         )}
       </div>
     </div>

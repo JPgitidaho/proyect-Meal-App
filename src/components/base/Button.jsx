@@ -14,8 +14,9 @@ export default function Button({
     disabled: "bg-gray-300 text-gray-600 cursor-not-allowed",
 
     
-    "olive-outline":
-      "bg-white/70 border border-[#7A9E7E] text-[#7A9E7E] hover:bg-[#7A9E7E]/20 focus:outline-none",
+  "olive-outline":
+  "bg-white/70 border border-[#7A9E7E] text-[#7A9E7E] hover:bg-[#7A9E7E]/60 hover:text-white focus:outline-none",
+
   };
 
   const styles = disabled

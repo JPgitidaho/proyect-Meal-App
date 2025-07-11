@@ -44,26 +44,27 @@ export default function SearchBar({ placeholder = "Buscar..." }) {
   }
 
   return (
-    <div className="busqueda flex flex-col items-center w-full relative">
-      <div className="searchBar flex flex-row border pr-6 border-[#51612a] w-[75%] justify-between">
-        <input
-          type="text"
-          placeholder={placeholder}
-          className="p-3 rounded w-[93%] text-[#586833]"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setErrorMsg("");
-            setSelectedMealId(null); // reiniciamos cuando cambia texto
-          }}
-        />
-        <button
-          className="flex hover:scale-105 transition duration-300 cursor-pointer w-[7%] justify-center items-center"
-          onClick={handleSearchRedirect}
-        >
-          <img className="size-12" src={search} alt="Buscar" />
-        </button>
-      </div>
+   <div className="busqueda flex flex-col items-center w-full relative">
+  <div className="searchBar flex items-center border pr-2 border-[#51612a] w-[75%]">
+    <input
+      type="text"
+      placeholder={placeholder}
+      className="p-3 rounded flex-1 text-[#586833]"
+      value={query}
+      onChange={(e) => {
+        setQuery(e.target.value);
+        setErrorMsg("");
+        setSelectedMealId(null);
+      }}
+    />
+    <button
+      className="flex items-center justify-center p-2 transition hover:scale-105 duration-300"
+      onClick={handleSearchRedirect}
+    >
+      <img src={search} alt="Buscar" className="w-6 h-6" />
+    </button>
+  </div>
+
 
       {results.length > 0 && (
         <ul className="absolute top-full max-h-48 w-[75%] overflow-y-auto bg-white border border-[#51612a] shadow-lg z-20 text-[#586833]">
