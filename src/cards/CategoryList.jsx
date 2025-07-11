@@ -52,7 +52,7 @@ export default function CategoryList() {
                   }
                 />
               ))}
-                          <div className="mt-6 text-center">
+              <div className="mt-6 text-center">
               <Link
                 to="/todas-categorias"
                 className="text-xl font-semibold text-[#586833] hover:text-[#3f4f28] transition"
