@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#5A3E36] text-white py-8">
+    <footer className="bg-[#5A3E36] text-white p-8">
       <div className=" mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left mb-4 md:mb-0">
           <img src="/assets/logo.svg" alt="Logo" className="h-10 mx-auto md:mx-0 mb-2" />
@@ -52,7 +52,6 @@ const Footer = () => {
 
         <div className="text-center md:text-right">
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-            <li><Link to="/privacidad" className="text-gray-300 hover:text-white transition-colors duration-300">Política de Privacidad</Link></li>
             <li><Link to="/contacto" className="text-gray-300 hover:text-white transition-colors duration-300">Contacto</Link></li>
           </ul>
 
